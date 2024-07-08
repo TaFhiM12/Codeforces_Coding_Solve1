@@ -48,18 +48,16 @@ vector<int> primeFactorization(int n) {
 
 int32_t main() {
     optimize();
+    seive(3005);
     int n; cin >> n;
-    seive(n);
-
     if (n < 6) {
         cout << 0 << nl;
     } else {
         int cnt = 0;
         for (int i = 6; i <= n; i++) {
             vector<int> factors = primeFactorization(i);
-            set<int> st;
-            for(auto u : factors) st.insert(u);
-            if (st.size() >= 2) cnt++;
+            set<int> st(factors.begin(),factors.end());
+            if (st.size() == 2) cnt++;
         }
         cout << cnt << nl;
     }
