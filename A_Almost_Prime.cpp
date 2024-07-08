@@ -58,11 +58,6 @@ int32_t main() {
         for (int i = 6; i <= n; i++) {
             vector<int> factors = primeFactorization(i);
             set<int> st;
-            // cout << i << " : " << " ";
-            // for (auto factor : factors) {
-            //     cout << factor << " ";
-            // }
-            // cout << nl;
             for(auto u : factors) st.insert(u);
             if (st.size() >= 2) cnt++;
         }
